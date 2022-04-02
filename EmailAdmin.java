@@ -27,7 +27,7 @@ public class EmailAdmin {
         this.password = randomPassword(defaultPasswordLength);
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + dept.toLowerCase() + "." + companyEmail;
     }
-    //Ask for department, return department.
+    //Asks for department and user enters department.
     private String setDept() {
         System.out.print("Welcome to EyeBeeM " + firstName + " " + lastName + "! Please enter your department number and we will generate the information you need to get started today: \n1 Sales\n2 Development\n3 Accounting\n0 None\n>>> ");
         Scanner in = new Scanner(System.in);
@@ -68,6 +68,7 @@ public class EmailAdmin {
     public void changePassword(String password) {
         this.password = password;
     }
+    //Sey phone number
     public void setPhoneNumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
@@ -84,11 +85,13 @@ public class EmailAdmin {
      public String getPhoneNumber(){
         return phonenumber;
      }
+    //What showInfo returns
      public String showInfo() {
         System.out.print("\n" + "Display Name: " + firstName + " " + lastName + "\nDepartment: " + dept + "\nCompany Email: " + email + "\nTemporary Password: " + password + "\nMailbox Capacity: " + mailbox + "mb" + "\n" + "\nPersonal Email: " + altEmail + "\nPhone number: " + phonenumber);
         return null;
      }
      
+    //Asks user if information is correct, responds pending on choice.
       String setConfirm() {
          System.out.print("\nDoes this information look correct to you? " + "\n1 Yes" + "\n2 No" + "\n>>> ");
          Scanner in = new Scanner(System.in);
